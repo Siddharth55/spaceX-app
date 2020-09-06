@@ -1,0 +1,76 @@
+html, body {
+     height: 100%; 
+}
+
+body { 
+    margin: 0;
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+    background-color: lightblue;
+}
+
+.centerAlign {
+    text-align: center;
+    margin: 50px
+}
+.headingName {
+    margin-left: 26px;
+    margin-top: 25px;
+} 
+
+.filterBtn {
+    margin-top: 20px;
+}
+
+.responsive{
+    margin: 10px;
+}
+.sidePanel {
+    background: white;
+    color: black;
+    width: 190px;
+}
+
+.cardTitle {
+    margin-left: -14px;
+}
+.alignfirstcard {
+    margin-left: -100px;
+}
+
+.example-card {
+    background: white;
+    color: black;
+    width: 210px;
+    margin-left: 14px;
+    max-width: 300px;
+    margin-bottom: 50px;
+    float: left;
+    height: 440px;
+  }
+  
+.example-header-image {
+    background-size: cover;
+  }
+
+.alignbutton {
+    margin-left: 50px;
+}
+
+.topmargin {
+    margin-top: 10px;
+}
+
+.labelclass {
+    font-size: 14px;
+    /* align-items: center; */
+    margin-left: 45px;
+    color: brown;
+}
+
+.seclabelclass {
+    font-size: 14px;
+    /* align-items: center; */
+    margin-left: 25px;
+    color: brown;
+}
+    

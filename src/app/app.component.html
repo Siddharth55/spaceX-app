@@ -1,0 +1,126 @@
+<div class="centerAlign" *ngIf = "isLoading == true">
+  Please wait.....
+</div> 
+<div *ngIf = "isLoading == false">
+<h3 class="headingName">SpaceX Launch Programs</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2" style="right:1vw">
+        <mat-card class="sidePanel">
+          <mat-card-header>
+            <mat-card-title class="cardTitle">Filters</mat-card-title>
+          </mat-card-header>
+          <div *ngIf = "hasFilters == true" style="color: cadetblue;"><span>Year: {{year}}</span><br><span>Launch Success: {{successLaunchYear}}</span><br><span>Land Success: {{landValue}}</span></div>
+          <u style="color: darkgreen;"><span class="labelclass">Launch Year</span></u>
+          <div class="topmargin">
+           <form> 
+            <button mat-button value = "2006" name="2006" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm">2006</button>
+            <button mat-button value = "2007" name="2007" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm alignbutton">2007</button>
+          </form>
+          </div>
+          <div class="topmargin">
+          <form>
+            <button mat-button value = "2008" name="2008" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm">2008</button>
+            <button mat-button value = "2009" name="2009" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm alignbutton">2009</button>
+          </form>
+          </div>
+          <div class="topmargin">
+          <form>
+            <button mat-button value = "2010" name="2010" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm">2010</button>
+            <button mat-button value = "2011" name="2011" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm alignbutton">2011</button>
+          </form>
+          </div>
+          <div class="topmargin">
+          <form>
+            <button mat-button value = "2012" name="2012" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm">2012</button>
+            <button mat-button value = "2013" name="2013" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm alignbutton">2013</button>
+          </form>
+          </div>
+          <div class="topmargin">
+          <form>
+            <button mat-button value = "2014" name="2014" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm">2014</button>
+            <button mat-button value = "2015" name="2015" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm alignbutton">2015</button>
+          </form>
+          </div>
+          <div class="topmargin">
+          <form> 
+            <button mat-button value = "2016" name="2016" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm">2016</button>
+            <button mat-button value = "2017" name="2017" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm alignbutton">2017</button>
+          </form>
+          </div>
+          <div class="topmargin">
+          <form>
+            <button mat-button value = "2018" name="2018" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm">2018</button>
+            <button mat-button value = "2019" name="2019" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm alignbutton">2019</button>
+          </form>
+          </div>
+          <div class="topmargin">
+          <form>
+            <button mat-button value = "2020" name="2020" (click) = "getYearValue($event.target.value)" class="btn btn-success btn-sm">2020</button>
+          </form>
+          </div><br>
+          <u style="color: darkgreen;"><span class="seclabelclass">Successful Launch</span></u>
+          <div class="topmargin">
+           <form> 
+            <button mat-button value = "true" name="true" (click) = "getSuccessfulLaunchValue($event.target.value)" class="btn btn-success btn-sm">True</button>
+            <button mat-button value = "false" name="false" (click) = "getSuccessfulLaunchValue($event.target.value)" class="btn btn-success btn-sm alignbutton">False</button>
+          </form>
+          </div><br>
+          <u style="color: darkgreen;"><span class="seclabelclass">Successful Landing</span></u>
+          <div class="topmargin">
+          <form> 
+            <button mat-button value = "true" name="true" class="btn btn-success btn-sm" (click) = "getSuccessfulLandValue($event.target.value)">True</button>
+            <button mat-button value = "false" name="false" class="btn btn-success btn-sm alignbutton" (click) = "getSuccessfulLandValue($event.target.value)">False</button>
+          </form>
+          </div>
+          <div class="topmargin">
+          <form> 
+            <button mat-button (click)="applyFilter()" class="btn btn-warning btn-sm filterBtn">Apply</button>
+            <button mat-button (click)="removeFilters()" style="float: right;" class="btn btn-danger btn-sm filterBtn">Remove</button>
+          </form>
+          </div>
+        </mat-card>
+      </div>
+     
+      <div class="col-sm-10" style="left:4vw">
+        <div class="responsive" *ngFor = "let item of spacexAllData; index as i">
+          <mat-card class="example-card">
+            <img *ngIf = "i>=0 && i<=2" mat-card-image src="../assets/images/spacex1.png" alt="SpaceX Property">
+            <img *ngIf = "i>2 && i <=4" mat-card-image src="../assets/images/spacex2.png" alt="SpaceX Property">
+            <img *ngIf = "i>4 && i <= 6" mat-card-image src="../assets/images/spacex20.png" alt="SpaceX Property">
+            <img *ngIf = "i > 6 && i<=9" mat-card-image src="../assets/images/spacex4.png" alt="SpaceX Property">
+            <img *ngIf = "i > 9 && i<=12" mat-card-image src="../assets/images/spacex5.png" alt="SpaceX Property">
+            <img *ngIf = "i > 12 && i<=14" mat-card-image src="../assets/images/spacex6.png" alt="SpaceX Property">
+            <img *ngIf = "i > 14 && i<=17" mat-card-image src="../assets/images/spacex14.png" alt="SpaceX Property">
+            <img *ngIf = "i > 17 && i<=18" mat-card-image src="../assets/images/spacex8.png" alt="SpaceX Property">
+            <img *ngIf = "i > 18 && i<=19" mat-card-image src="../assets/images/spacex9.png" alt="SpaceX Property">
+            <img *ngIf = "i > 19 && i<=23" mat-card-image src="../assets/images/spacex10.png" alt="SpaceX Property">
+            <img *ngIf = "i > 23 && i<=25" mat-card-image src="../assets/images/spacex11.png" alt="SpaceX Property">
+            <img *ngIf = "i > 25 && i<=27" mat-card-image src="../assets/images/spacex12.png" alt="SpaceX Property">
+            <img *ngIf = "i > 27 && i<=30" mat-card-image src="../assets/images/spacex12.png" alt="SpaceX Property">
+            <img *ngIf = "i > 30 && i<=32" mat-card-image src="../assets/images/spacex14.png" alt="SpaceX Property">
+            <img *ngIf = "i > 32 && i<=34" mat-card-image src="../assets/images/spacex15.png" alt="SpaceX Property">
+            <img *ngIf = "i > 34 && i<=36" mat-card-image src="../assets/images/spacex15.png" alt="SpaceX Property">
+            <img *ngIf = "i > 36 && i<=40" mat-card-image src="../assets/images/spacex17.png" alt="SpaceX Property">
+            <img *ngIf = "i > 40 && i<=43" mat-card-image src="../assets/images/spacex18.png" alt="SpaceX Property">
+            <img *ngIf = "i > 43 && i<=47" mat-card-image src="../assets/images/spacex19.png" alt="SpaceX Property">
+            <img *ngIf = "i >47" mat-card-image src="../assets/images/spacex20.png" alt="SpaceX Property">
+            <mat-card-content>
+              <div style="color: blue;"><b>{{item.mission_name}} # {{item.flight_number}}</b></div><br>
+                <div><b>Mission IDs:-</b> <b><label style="color: blueviolet;">{{item.mission_id}}</label></b></div>
+                <div><b>Launch Year:-</b> <b><label style="color: blue;">{{item.launch_year}}</label></b></div>
+                <div><b>Successful Launch:-</b><b><label style="color: blue;">{{item.launch_success}}</label></b></div>
+                <div><b>Successful Landing:-</b><b><label style="color: blue;">{{item.launch_landing}}</label></b></div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div style="margin: 220px" *ngIf = "openerrordialog == true">
+            <b>No data found for the selected filter. Please modify your search.</b>
+        </div>      
+    </div>
+  </div>
+</div>
+<div style="text-align:center">
+  <b>Developed By:</b> Siddharth Nagar
+</div>
+</div>
