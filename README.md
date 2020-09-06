@@ -38,5 +38,9 @@ This application can be run on SSR approach. Use the following command to render
 `For Server`
 1. Node.js + Express server
 
+## To get the Lighthouse Score
+
+Refer to lighthouse score.png placed in parallel to src folder.
+
 ##  Approach followed
 Applied the clear code principles. Followed angular SPA development approach. Tried to achieve full responsive ness but could achieve only upto an extent.  
